@@ -1,0 +1,24 @@
+function Output=CombFilterBathroom(Input,Tr)
+
+m(1)=935
+for i=2:40
+    m(i)=m(i-1)+12; % crée les différents delays de chaque blocs en sample
+end
+
+CombGain = 10.^(-3*Tr*44100./m);
+
+for n=1:40   %40 car on choisit 40 combfilter en //
+    CombGain(n) = 10^(-3*(CombGain(n)/44100)/Tr); %formule de la Tr
+end
+
+ for i=1:40
+        for n=1:Nmax
+        if n-m(i)<1
+        y(n)=0;
+        else
+        y(n)=Input(n)-g(i)*y(n-m(i)); 
+        end
+        end
+       Output=Output+y(i,:));
+ end
+ 
