@@ -3,6 +3,6 @@ Boite à effets
 
 Boite à effets Matlab
 
-Dévellopeurs:
+Contributeurs:
 - Kévin Frydman
 - Jean-Guillaume Roux
